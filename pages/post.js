@@ -43,12 +43,10 @@ const Post = () => {
           <span className="pp-title"> {post ? post.title : ""} </span>
           <span className="pp-info">
             {post
-              ? post.by +
-                " on " +
-                new Date(post.createdAt).toLocaleDateString() +
-                "  Views:" +
-                post.views
-              : ""}
+              ? post.by + ", " + new Date(post.createdAt).toLocaleDateString()
+              : // "  Views:" +
+                // post.views
+                ""}
           </span>
         </div>
         <div className="pp-body">
