@@ -59,7 +59,7 @@ const Comments = ({ id }) => {
         {cdata.length !== 0
           ? cdata.map((c) => {
               return (
-                <div className="single-c-wrapper">
+                <div key={c.id} className="single-c-wrapper">
                   <span className="c-by">{c.name}</span>
                   <span className="c-time">
                     {" "}

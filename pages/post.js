@@ -16,6 +16,7 @@ const Post = () => {
 
   useEffect(() => {
     let { id } = router.query;
+    console.log(id)
     const fetchData = async () => {
       const snapshot = await firestore.doc(`posts/${id}`).get();
       const p = snapshot.data();
