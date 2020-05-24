@@ -63,7 +63,7 @@ body {
     font-size: 0.8em;
     padding: 0.3em 1.2em;
     border-radius: 6px;
-    z-index: 12;
+    z-index: 2;
   }
   &:hover .title-details .lp-title {
     text-decoration: underline;
@@ -74,7 +74,7 @@ body {
     height: max-content;
     position: absolute;
     bottom: 20px;
-    max-width: 60%;
+    max-width: 80%;
     padding: 1em 0;
     .lp-title {
       display: block;
@@ -351,6 +351,13 @@ blockquote {
   color: #0d0221;
   padding: 0.5em;
   padding-left: 1em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
 a {
@@ -520,6 +527,85 @@ hi {
   }
 }
 
+//Comments Styles
+.clist-wrapper {
+  width: 100%;
+}
+.single-c-wrapper {
+  width: 100%;
+  background: #eee;
+  padding: 0.8em 1.4em;
+  border-radius: 6px;
+  margin: 0.2em 0;
+  .c-by {
+    font-family: $f-pri;
+    font-weight: 700;
+    font-size: 1em;
+  }
+  .c-time {
+    font-family: $f-pri;
+    font-weight: 500;
+    font-size: 0.8em;
+  }
+  .c-content {
+    margin-top: 0.4em;
+    display: block;
+    font-size: 0.9em;
+  }
+}
+
+.t-a-c {
+  text-align: center;
+  margin-top: 1em;
+}
+.comments-wrapper {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    text-align: center;
+  }
+  .add-c-wrapper {
+    width: 100%;
+    background: #d6d6d6;
+    padding: 2em;
+    border-radius: 7px;
+    form {
+      display: grid;
+      gap: 0em 2em;
+      grid-template-columns: 1fr 1fr;
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.4em 1em;
+        margin: 0.5em 0;
+        border: 1px solid transparent;
+        background-color: #f6f6ff;
+        font-size: 1em;
+        border-radius: 14px;
+        font-family: $f-sec;
+        outline: none;
+        &:focus {
+          background: #f6f6f6;
+          border: 1px solid #387cff;
+        }
+      }
+      textarea {
+        width: 100%;
+        height: 100px;
+      }
+      .t-c-w {
+        grid-column: 1 / span 2;
+        button {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
 // Loader Styles and Animations
 
 .loader,
@@ -659,5 +745,15 @@ hi {
 
   .sp-wrapper {
     width: 100vw !important;
+  }
+
+  .comments-wrapper{
+    .add-c-wrapper{
+      form{
+        input{
+          grid-column: 1/ span 2;
+        }
+      }
+    }
   }
 }

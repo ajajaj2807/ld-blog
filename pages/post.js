@@ -6,6 +6,7 @@ import { firestore } from "../firebase";
 import firebase from "firebase/app";
 import Loading from "../comps/Loading";
 import Head from "next/head";
+import Comments from "../comps/Comments";
 const ReactMarkdown = require("react-markdown/with-html");
 const Post = () => {
   const router = useRouter();
@@ -20,11 +21,11 @@ const Post = () => {
       const p = snapshot.data();
       setPost(p);
 
-      if(id !== undefined){
+      if (id !== undefined) {
         const pref = firestore.doc(`posts/${id}`);
-      pref.update({
-        views: firebase.firestore.FieldValue.increment(1),
-      });
+        pref.update({
+          views: firebase.firestore.FieldValue.increment(1),
+        });
       }
     };
     fetchData();
@@ -77,6 +78,7 @@ const Post = () => {
               ""
             )}
           </div>
+          <Comments id={id} comments={""} />
         </div>
 
         {/* <div className="pp-like-wrapper">
