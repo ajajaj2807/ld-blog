@@ -5,6 +5,7 @@ import Footer from "../comps/Footer";
 import { firestore } from "../firebase";
 import firebase from "firebase/app";
 import Loading from "../comps/Loading";
+import Head from "next/head";
 const ReactMarkdown = require("react-markdown/with-html");
 
 const Post = () => {
@@ -37,6 +38,17 @@ const Post = () => {
 
   return (
     <div className="spp-wrap">
+      <Head>
+        <title>{post ? post.title : "Loading..."}</title>
+        <meta name="description" content={post.description} />
+        <meta name="og:description" content={post.description} />
+        <meta name="twitter:description" content={post.description} />
+        <meta property="og:title" content={post.title} />
+        <meta property="twitter:title" content={post.title} />
+        <meta property="og:type" content="blog" />
+        <meta property="og:image" content={post.imgUrl} />
+      </Head>
+
       <Header />
       <div className="sp-wrapper">
         <div className="pp-head">
