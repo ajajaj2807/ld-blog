@@ -5,3 +5,11 @@ module.exports = {
     includePaths: [path.join(__dirname, "styles")],
   },
 };
+
+module.exports = {
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+    };
+  },
+};
