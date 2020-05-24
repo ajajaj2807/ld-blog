@@ -7,6 +7,7 @@ import firebase from "firebase/app";
 import Loading from "../comps/Loading";
 import Head from "next/head";
 const ReactMarkdown = require("react-markdown/with-html");
+import ReactDisqusComments from "react-disqus-comments";
 
 const Post = () => {
   const router = useRouter();
@@ -80,6 +81,15 @@ const Post = () => {
           <h2 className="pp-l-title">Liked the article? Give it a like!</h2>
           <button className="like-post-btn">Like💖</button>
         </div> */}
+        <div className="comments-wrapper">
+          <ReactDisqusComments
+            shortname="www-ajay-rocks"
+            identifier={post ? post.id : ""}
+            title={post ? post.title : ""}
+            url={`www.ajay.rocks${router.asPath}`}
+            category_id="123456"
+          />
+        </div>
       </div>
       <Footer />
       <style jsx>
