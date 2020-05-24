@@ -7,6 +7,7 @@ import AllPosts from "../comps/AllPosts";
 import { firestore } from "../firebase";
 import { collectIdsAndDocs } from "../utils";
 import Loading from "../comps/Loading";
+import Head from "next/head";
 
 //To remove a post
 // const handleRemove = async () => {
@@ -42,6 +43,24 @@ const Index = () => {
 
   return (
     <div className="body-container">
+      <Head>
+        <title>Ajay Yadav - Personal Blog</title>
+        <meta
+          name="description"
+          content="Useful Web Develpoment Articles and Resources"
+        />
+        <meta
+          name="og:description"
+          content="Useful Web Develpoment Articles and Resources"
+        />
+        <meta
+          name="twitter:description"
+          content="Useful Web Develpoment Articles and Resources"
+        />
+        <meta property="og:title" content="Ajay Yadav - Personal Blog" />
+        <meta property="twitter:title" content="Ajay Yadav - Personal Blog" />
+        <meta property="og:type" content="blog" />
+      </Head>
       <Header />
       <Latest posts={posts} />
       <Subscribe />
