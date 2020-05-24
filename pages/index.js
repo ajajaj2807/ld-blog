@@ -44,18 +44,18 @@ const Index = () => {
   return (
     <div className="body-container">
       <Head>
-        <title>Ajay Yadav - Personal Blog</title>
+        <title>Web Development Blog - Ajay Yadav</title>
         <meta
           name="description"
-          content="Useful Web Develpoment Articles and Resources"
+          content="Useful Web Develpoment Articles and Resources on ReactJS, Modern Javascript, Advanced Patterns, Good Practices and much more"
         />
         <meta
           name="og:description"
-          content="Useful Web Develpoment Articles and Resources"
+          content="Useful Web Develpoment Articles and Resources on ReactJS, Modern Javascript, Advanced Patterns, Good Practices and much more"
         />
         <meta
           name="twitter:description"
-          content="Useful Web Develpoment Articles and Resources"
+          content="Useful Web Develpoment Articles and Resources on ReactJS, Modern Javascript, Advanced Patterns, Good Practices and much more"
         />
         <meta property="og:title" content="Ajay Yadav - Personal Blog" />
         <meta property="twitter:title" content="Ajay Yadav - Personal Blog" />
