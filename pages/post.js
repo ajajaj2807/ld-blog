@@ -20,10 +20,12 @@ const Post = () => {
       const p = snapshot.data();
       setPost(p);
 
-      //   const pref = firestore.doc(`posts/${id}`);
-      //   pref.update({
-      //     views: firebase.firestore.FieldValue.increment(1),
-      //   });
+      if(id !== undefined){
+        const pref = firestore.doc(`posts/${id}`);
+      pref.update({
+        views: firebase.firestore.FieldValue.increment(1),
+      });
+      }
     };
     fetchData();
   }, [router.query]);
@@ -58,10 +60,12 @@ const Post = () => {
           <span className="pp-title"> {post ? post.title : ""} </span>
           <span className="pp-info">
             {post
-              ? post.by + ", " + new Date(post.createdAt).toLocaleDateString()
-              : // "  Views:" +
-                // post.views
-                ""}
+              ? post.by +
+                ", " +
+                new Date(post.createdAt).toLocaleDateString() +
+                " Views: " +
+                post.views
+              : ""}
           </span>
         </div>
         <div className="pp-body">
