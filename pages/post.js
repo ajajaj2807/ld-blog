@@ -10,23 +10,24 @@ const ReactMarkdown = require("react-markdown/with-html");
 
 const Post = () => {
   const router = useRouter();
-  const { id } = router.query;
+  let { id } = router.query;
   const [post, setPost] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let { id } = router.query;
     const fetchData = async () => {
       const snapshot = await firestore.doc(`posts/${id}`).get();
       const p = snapshot.data();
       setPost(p);
 
-      const pref = firestore.doc(`posts/${id}`);
-      pref.update({
-        views: firebase.firestore.FieldValue.increment(1),
-      });
+      //   const pref = firestore.doc(`posts/${id}`);
+      //   pref.update({
+      //     views: firebase.firestore.FieldValue.increment(1),
+      //   });
     };
     fetchData();
-  }, []);
+  }, [router.query]);
 
   useEffect(() => {
     setLoading(false);
@@ -40,13 +41,16 @@ const Post = () => {
     <div className="spp-wrap">
       <Head>
         <title>{post ? post.title : "Loading..."}</title>
-        <meta name="description" content={post.description} />
-        <meta name="og:description" content={post.description} />
-        <meta name="twitter:description" content={post.description} />
-        <meta property="og:title" content={post.title} />
-        <meta property="twitter:title" content={post.title} />
+        <meta name="description" content={post ? post.description : ""} />
+        <meta name="og:description" content={post ? post.description : ""} />
+        <meta
+          name="twitter:description"
+          content={post ? post.description : ""}
+        />
+        <meta property="og:title" content={post ? post.title : ""} />
+        <meta property="twitter:title" content={post ? post.title : ""} />
         <meta property="og:type" content="blog" />
-        <meta property="og:image" content={post.imgUrl} />
+        <meta property="og:image" content={post ? post.imgUrl : ""} />
       </Head>
 
       <Header />

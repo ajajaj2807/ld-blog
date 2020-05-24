@@ -11,7 +11,7 @@ const Latest = ({ posts }) => {
   }, [posts[0]]);
 
   return (
-    <Link as="post" href={`/post?id=${posts[0] ? posts[0].id : ""}`}>
+    <Link href={`/post?id=${posts[0] ? posts[0].id : ""}`}>
       <div className="latest-wrapper">
         <div className="label">LATEST</div>
         <div className="title-details">
