@@ -181,9 +181,13 @@ button {
   height: 35vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+  }
   .footer-thanks {
     font-family: $f-pri;
     font-weight: 900;
@@ -197,7 +201,31 @@ button {
     margin-top: 0.4em;
     font-family: $f-sec;
     color: #464646;
-    text-align: center;
+  }
+}
+
+//Contact Styles
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-size: 1.2em;
+  }
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4em;
+
+    input,
+    textarea {
+      padding: 0.5em 1em;
+      width: 100%;
+      border: 2px solid #000;
+      resize: none;
+    }
+    .t-c-w {
+      grid-column: 1 / span 2;
+    }
   }
 }
 
@@ -269,9 +297,13 @@ button {
 }
 
 //Single Post Page
+
+.spp-wrap {
+  width: 65vw;
+  margin: 0 auto;
+}
 .sp-wrapper {
-  width: 60%;
-  margin: 2em auto;
+  margin: 1em 0;
   .pp-head {
     padding: 40vh 20px 20px 20px;
     background: #eee;
@@ -747,11 +779,11 @@ hi {
     width: 100vw !important;
   }
 
-  .comments-wrapper{
-    .add-c-wrapper{
-      form{
-        input{
-          grid-column: 1/ span 2;
+  .comments-wrapper {
+    .add-c-wrapper {
+      form {
+        input {
+          grid-column: 1 / span 2;
         }
       }
     }

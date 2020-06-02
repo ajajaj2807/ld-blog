@@ -13,6 +13,7 @@
   "author": "Ajay Yadav",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.1.1",
     "firebase": "^7.14.4",
     "next": "^9.4.1",
     "react": "^16.13.1",
