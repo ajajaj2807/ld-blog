@@ -1,4 +1,4 @@
-import ContactBox from './ContactBox'
+import ContactBox from "./ContactBox";
 
 const Footer = () => {
   return (
@@ -13,9 +13,7 @@ const Footer = () => {
           <br />I have a project idea. Contact me if interested.
         </span>
       </div>
-      <div className="contact-box">
-        <ContactBox />
-      </div>
+      <div className="contact-box">{/* <ContactBox /> */}</div>
     </div>
   );
 };

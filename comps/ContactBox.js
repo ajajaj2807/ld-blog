@@ -1,9 +1,5 @@
 import { useState } from "react";
-const sgMail = require("@sendgrid/mail");
-
-sgMail.setApiKey(
-  "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"
-);
+import firebase from "firebase";
 
 const ContactBox = () => {
   const [name, setName] = useState("");
@@ -13,21 +9,13 @@ const ContactBox = () => {
   const sendMessage = (e) => {
     e.preventDefault();
     const adminMsg = {
-      to: "ajajaj2807@gmail.com",
-      from: email,
-      subject: "New Message from the Blog",
-      text: `By: ${name}, Content: ${content}`,
+      name: name,
+      email: email,
+      content: content,
     };
-    const userCopy = {
-      to: email,
-      from: "ajajaj2807@gmail.com",
-      subject: "From Ajay, with 💖",
-      text: `Your message was sent successfully. I will try to get back to you ASAP. This message was sent to you because you tried to contact Ajay from www.ajay.rocks. If it wasn't you, Please ignore this mail.`,
-    };
-    sgMail.send(adminMsg);
-    console.log("sent to admin");
-    sgMail.send(userCopy);
-    console.log("sent to user");
+
+    var mailer = firebase.functions().httpsCallable("emailMessage");
+    mailer(adminMsg);
   };
 
   return (
