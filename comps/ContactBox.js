@@ -2,7 +2,7 @@ import { useState } from "react";
 const sgMail = require("@sendgrid/mail");
 
 sgMail.setApiKey(
-  "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"
+  "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"
 );
 
 const ContactBox = () => {
