@@ -5,9 +5,10 @@ import Footer from "../comps/Footer";
 import { firestore } from "../firebase";
 import firebase from "firebase/app";
 import Loading from "../comps/Loading";
-import Head from "next/head";
 import Comments from "../comps/Comments";
+import { NextSeo } from "next-seo";
 const ReactMarkdown = require("react-markdown/with-html");
+
 const Post = () => {
   const router = useRouter();
   let { id } = router.query;
@@ -16,7 +17,7 @@ const Post = () => {
 
   useEffect(() => {
     let { id } = router.query;
-    console.log(id)
+    console.log(id);
     const fetchData = async () => {
       const snapshot = await firestore.doc(`posts/${id}`).get();
       const p = snapshot.data();
@@ -42,20 +43,22 @@ const Post = () => {
 
   return (
     <div className="spp-wrap">
-      <Head>
-        <title>{post ? post.title : "Loading..."}</title>
-        <meta name="description" content={post ? post.description : ""} />
-        <meta name="og:description" content={post ? post.description : ""} />
-        <meta
-          name="twitter:description"
-          content={post ? post.description : ""}
-        />
-        <meta property="og:title" content={post ? post.title : ""} />
-        <meta property="twitter:title" content={post ? post.title : ""} />
-        <meta property="og:type" content="blog" />
-        <meta property="og:image" content={post ? post.imgUrl : ""} />
-      </Head>
-
+      <NextSeo
+        title={post ? post.title : "Article by Ajay Yadav - Personal Blog"}
+        description={post ? post.description : ""}
+        openGraph={{
+          title: post ? post.title : "Article by Ajay Yadav",
+          description: post ? post.description : "",
+          url: "https://www.ajay.rocks/",
+          type: "blog",
+          images: [
+            {
+              url: post ? post.imgUrl : "",
+              alt: "Article Head Image",
+            },
+          ],
+        }}
+      />
       <Header />
       <div className="sp-wrapper">
         <div className="pp-head">

@@ -7,8 +7,7 @@ import AllPosts from "../comps/AllPosts";
 import { firestore } from "../firebase";
 import { collectIdsAndDocs } from "../utils";
 import Loading from "../comps/Loading";
-import Head from "next/head";
-
+import { NextSeo } from "next-seo";
 //To remove a post
 // const handleRemove = async () => {
 //   const allPosts = state.posts;
@@ -43,24 +42,17 @@ const Index = () => {
 
   return (
     <div className="body-container">
-      <Head>
-        <title>Web Development Blog - Ajay Yadav</title>
-        <meta
-          name="description"
-          content="Useful Web Develpoment Articles and Resources on ReactJS, Modern Javascript, Advanced Patterns, Good Practices and much more"
-        />
-        <meta
-          name="og:description"
-          content="Useful Web Develpoment Articles and Resources on ReactJS, Modern Javascript, Advanced Patterns, Good Practices and much more"
-        />
-        <meta
-          name="twitter:description"
-          content="Useful Web Develpoment Articles and Resources on ReactJS, Modern Javascript, Advanced Patterns, Good Practices and much more"
-        />
-        <meta property="og:title" content="Ajay Yadav - Personal Blog" />
-        <meta property="twitter:title" content="Ajay Yadav - Personal Blog" />
-        <meta property="og:type" content="blog" />
-      </Head>
+      <NextSeo
+        title="Web Development Blog - Ajay Yadav"
+        description="Useful Web Develpoment Articles and Resources on ReactJS, Modern Javascript, Advanced Patterns, Good Practices and much more"
+        openGraph={{
+          url: "https://www.ajay.rocks/",
+          title: "Ajay Yadav - Personal Blog",
+          description:
+            "Useful Web Develpoment Articles and Resources on ReactJS, Modern Javascript, Advanced Patterns, Good Practices and much more",
+          site_name: "Ajay Yadav - Personal Blog",
+        }}
+      />
       <Header />
       <Latest posts={posts} />
       <Subscribe />
