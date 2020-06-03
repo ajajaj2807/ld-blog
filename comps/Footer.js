@@ -1,6 +1,8 @@
-import ContactBox from "./ContactBox";
+import SubscribeModal from "./SubscribeModal";
+import { useState } from "react";
 
 const Footer = () => {
+  const [modal, setModal] = useState(false);
   return (
     <div className="footer-wrapper">
       <div className="footer-info">
@@ -13,7 +15,13 @@ const Footer = () => {
           <br />I have a project idea. Contact me if interested.
         </span>
       </div>
-      <div className="contact-box">{/* <ContactBox /> */}</div>
+      <div className="contact-box">
+        {/* <ContactBox /> */}
+        <button onClick={() => setModal(true)} style={{borderRadius: 8,padding: '0.8em 1.8em' , fontSize: '1.2em'}} className="b-bg-w">
+          Subscribe to Newsletter
+        </button>
+        {modal ? <SubscribeModal closeModal={() => setModal(false)} /> : <> </>}
+      </div>
     </div>
   );
 };

@@ -230,6 +230,15 @@ button {
 }
 
 //Subscribe Modal Styles
+.sg-form-wrapper {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  background-color: #fff;
+}
+
 .close-wrapper {
   height: 100%;
   width: 100%;
@@ -249,11 +258,12 @@ button {
     z-index: 98;
     border-radius: 10px;
     position: absolute;
-    width: 40vw;
-    background: #4bc6b9;
+    width: max(35vw, 500px);
+    background: #fff;
+    height: max(85vh, 650px);
+    padding: 2em 0;
     top: 50%;
     left: 50%;
-    padding: 3em;
     transform: translate(-50%, -50%);
     .sm-details {
       .sm-title {
@@ -739,6 +749,14 @@ hi {
     }
   }
 
+  .sub-modal-wrapper{
+    .sm-overlay{
+      width: 95vw !important;
+      height: max(650px, 70vh) !important;
+      padding: 1em 0 !important;
+    }
+  }
+
   .allposts-wrapper {
     .ap-cont {
       .sp-cont {
@@ -754,6 +772,12 @@ hi {
   }
 
   .footer-wrapper {
+    flex-direction: column;
+    padding: 2em;
+    button{
+      margin: 2em 0;
+      padding: 0.8em 1.8em;
+    }
     .footer-thanks {
       text-align: center;
     }

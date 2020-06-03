@@ -10,7 +10,8 @@ const SubscribeModal = ({ closeModal }) => {
     <div className="sub-modal-wrapper">
       <div onClick={closeModal} className="close-wrapper"></div>
       <div className="sm-overlay">
-      <h2>Coming Soon 📣</h2>
+        <iframe seamless className="sg-form-wrapper" src="https://cdn.forms-content.sg-form.com/8e3d3672-a578-11ea-a865-029d430e3b4c" />
+        
         {/* <div className="sm-details">
           <span className="sm-title">Subscribe to the Newsletter</span>
           <span className="sm-info">
