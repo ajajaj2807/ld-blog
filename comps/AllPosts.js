@@ -18,7 +18,7 @@ const AllPosts = ({ posts }) => {
                 </span>
               </div>
 
-              <Link as="post" href={`post?id=${post.id}`}>
+              <Link href={`post?id=${post.id}`}>
                 <button className="ap-rm"> Read </button>
               </Link>
             </div>

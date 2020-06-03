@@ -8,7 +8,7 @@ import { firestore } from "../firebase";
 import { collectIdsAndDocs } from "../utils";
 import Loading from "../comps/Loading";
 import { NextSeo } from "next-seo";
-import Notification from '../comps/Notification'
+import Notification from "../comps/Notification";
 //To remove a post
 // const handleRemove = async () => {
 //   const allPosts = state.posts;
@@ -32,10 +32,10 @@ const Index = () => {
     };
 
     fetchData();
-    setLoading(false);
+    return setLoading(false);
   }, []);
 
-  useEffect(() => {}, [posts]);
+  // useEffect(() => {}, [posts]);
 
   if (loading) {
     return <Loading />;

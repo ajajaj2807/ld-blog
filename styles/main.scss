@@ -176,7 +176,7 @@ button {
 }
 
 .notification-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -185,6 +185,7 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  z-index: 1001;
 
   cursor: dafault;
   .noti-body {
@@ -192,7 +193,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     .noti-type {
       display: inline-block;
       letter-spacing: 1px;
@@ -208,7 +209,7 @@ button {
       font-family: $f-sec;
     }
   }
-  .noti-close{
+  .noti-close {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,7 +220,7 @@ button {
     font-size: 1.3em;
     cursor: pointer;
     transition: all ease 0.5s;
-    &:hover{
+    &:hover {
       background-color: #387cff;
     }
   }
@@ -357,6 +358,19 @@ button {
 }
 
 //Single Post Page
+
+.white-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .spp-wrap {
   width: 65vw;
@@ -771,13 +785,13 @@ hi {
     width: 100vw;
   }
 
-  .notification-wrapper{
+  .notification-wrapper {
     z-index: 999;
     flex-direction: column;
-    .noti-body{
+    .noti-body {
       text-align: center;
       flex-direction: column;
-      .noti-content{
+      .noti-content {
         padding-top: 10px;
       }
     }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Header from "../comps/Header";
 import Footer from "../comps/Footer";
@@ -13,11 +13,8 @@ const Post = () => {
   const router = useRouter();
   let { id } = router.query;
   const [post, setPost] = useState("");
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     let { id } = router.query;
-    console.log(id);
     const fetchData = async () => {
       const snapshot = await firestore.doc(`posts/${id}`).get();
       const p = snapshot.data();
@@ -29,20 +26,14 @@ const Post = () => {
           views: firebase.firestore.FieldValue.increment(1),
         });
       }
-    };
+    }
+
     fetchData();
   }, [router.query]);
 
-  useEffect(() => {
-    setLoading(false);
-  }, [post]);
-
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <div className="spp-wrap">
+      {!post ? <div className="white-skeleton"> <Loading /> </div> : ''}
       <NextSeo
         title={post ? post.title : "Article by Ajay Yadav - Personal Blog"}
         description={post ? post.description : ""}
