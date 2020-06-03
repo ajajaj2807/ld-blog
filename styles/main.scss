@@ -175,6 +175,56 @@ button {
   }
 }
 
+.notification-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #387cff;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  cursor: dafault;
+  .noti-body {
+    padding: 0.6em 1.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .noti-type {
+      display: inline-block;
+      letter-spacing: 1px;
+      font-size: 0.7em;
+      text-transform: uppercase;
+      background: #286cef;
+      padding: 5px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .noti-content {
+      margin: 0 1em;
+      font-family: $f-sec;
+    }
+  }
+  .noti-close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #286cef;
+    font-family: $f-pri;
+    font-weight: 700;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    &:hover{
+      background-color: #387cff;
+    }
+  }
+}
+
 //Footer Style
 .footer-wrapper {
   margin-top: 3em;
@@ -721,6 +771,18 @@ hi {
     width: 100vw;
   }
 
+  .notification-wrapper{
+    z-index: 999;
+    flex-direction: column;
+    .noti-body{
+      text-align: center;
+      flex-direction: column;
+      .noti-content{
+        padding-top: 10px;
+      }
+    }
+  }
+
   .body-container {
     width: 100vw;
   }
@@ -749,8 +811,8 @@ hi {
     }
   }
 
-  .sub-modal-wrapper{
-    .sm-overlay{
+  .sub-modal-wrapper {
+    .sm-overlay {
       width: 95vw !important;
       height: max(650px, 70vh) !important;
       padding: 1em 0 !important;
@@ -774,7 +836,7 @@ hi {
   .footer-wrapper {
     flex-direction: column;
     padding: 2em;
-    button{
+    button {
       margin: 2em 0;
       padding: 0.8em 1.8em;
     }

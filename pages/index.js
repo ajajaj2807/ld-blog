@@ -8,6 +8,7 @@ import { firestore } from "../firebase";
 import { collectIdsAndDocs } from "../utils";
 import Loading from "../comps/Loading";
 import { NextSeo } from "next-seo";
+import Notification from '../comps/Notification'
 //To remove a post
 // const handleRemove = async () => {
 //   const allPosts = state.posts;
@@ -53,6 +54,7 @@ const Index = () => {
           site_name: "Ajay Yadav - Personal Blog",
         }}
       />
+      <Notification />
       <Header />
       <Latest posts={posts} />
       <Subscribe />
