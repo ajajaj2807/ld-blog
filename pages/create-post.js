@@ -1,6 +1,8 @@
 import { useState, useContext } from "react";
 import { firestore, storage } from "../firebase";
 import { collectIdsAndDocs } from "../utils";
+import ImageViewer from "../comps/ImageViewer";
+
 const ReactMarkdown = require("react-markdown/with-html");
 
 const Create = () => {
@@ -81,7 +83,6 @@ const Create = () => {
   return (
     <div className="create-wrapper">
       <h2>Create Post</h2>
-      
 
       {/* image uploading */}
       <div className="img-uploader-wrapper">
@@ -98,6 +99,8 @@ const Create = () => {
           <button>{upText}</button>
         </form>
       </div>
+
+      <ImageViewer />
 
       <form onSubmit={submitPost}>
         <input

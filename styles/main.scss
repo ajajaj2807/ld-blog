@@ -39,6 +39,26 @@ body {
   }
 }
 
+.ip-wrapper{
+  background-color: #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.image-preview-box{
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+}
+.image-thumb{
+  max-height: 70px;
+  margin: 8px;
+  cursor: copy;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
 
 //Header Styles
 .header-wrapper {
