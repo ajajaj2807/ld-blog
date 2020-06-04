@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 import Header from "../comps/Header";
 import Footer from "../comps/Footer";
 import Latest from "../comps/Latest";
@@ -22,6 +22,7 @@ import Notification from "../comps/Notification";
 const Index = () => {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const snapshot = await firestore.collection("posts").get();
@@ -54,7 +55,10 @@ const Index = () => {
           site_name: "Ajay Yadav - Personal Blog",
         }}
       />
-      <Notification />
+      <Notification type="info">
+        Newsletter facility available now. Click on the Subscribe button to
+        Subscribe. <b>Guest Articles Coming soon!</b>
+      </Notification>
       <Header />
       <Latest posts={posts} />
       <Subscribe />

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { firestore, storage } from "../firebase";
 import { collectIdsAndDocs } from "../utils";
 const ReactMarkdown = require("react-markdown/with-html");
@@ -81,6 +81,7 @@ const Create = () => {
   return (
     <div className="create-wrapper">
       <h2>Create Post</h2>
+      
 
       {/* image uploading */}
       <div className="img-uploader-wrapper">

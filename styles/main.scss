@@ -23,21 +23,59 @@ body {
   margin: 0 auto;
 }
 
+//Like styles
+.like-wrapper{
+  padding: 1em;
+  margin-top: 2em;
+  border: 2px solid #387cff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  button{
+    font-size: 1.1em;
+    background-color: #e9e9e9;
+    color: #212121;
+  }
+}
+
+
 //Header Styles
 .header-wrapper {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
   .header-nav {
-    padding: 20px;
-    padding-top: 40px;
-    background: #0d0221;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
     .logo {
       cursor: pointer;
-      font-size: 1.2em;
+      font-size: 1.4em;
       font-family: $f-pri;
-      font-weight: 600;
-      color: #fff;
+      font-weight: 800;
+      color: #212121;
+    }
+  }
+  .user-sign-wrapper{
+    padding: 0 1em;
+    .user-info-box{
+      display: flex;
+      flex-direction: column;
+      align-items: right;
+      align-content: right;
+      font-size: 0.8em;
+      button{
+        padding: 0;
+        background: #fff;
+        color: tomato;
+        font-weight: bold;
+        text-align: right;
+
+      }
     }
   }
 }
@@ -46,7 +84,7 @@ body {
 .latest-wrapper {
   cursor: default;
   font-family: $f-sec;
-  margin-top: 4em;
+  margin-top: 1em;
   width: 100%;
   background: #387cff;
   height: 45vh;
@@ -664,6 +702,11 @@ hi {
   text-align: center;
   margin-top: 1em;
 }
+.c-no-user-wrapper{
+  font-size: 1em;
+  color: red;
+  text-align: center;
+}
 .comments-wrapper {
   margin: 1em 0;
   display: flex;
@@ -675,24 +718,23 @@ hi {
   }
   .add-c-wrapper {
     width: 100%;
-    background: #d6d6d6;
-    padding: 2em;
-    border-radius: 7px;
+    padding: 2em 1em;
+    border-top: 2px solid #d6d6d6;
     form {
       display: grid;
       gap: 0em 2em;
       grid-template-columns: 1fr 1fr;
-      input,
       textarea {
         width: 100%;
         padding: 0.4em 1em;
         margin: 0.5em 0;
         border: 1px solid transparent;
-        background-color: #f6f6ff;
+        background-color: #e9e9e9;
         font-size: 1em;
-        border-radius: 14px;
+        border-radius: 8px;
         font-family: $f-sec;
         outline: none;
+        resize: none;
         &:focus {
           background: #f6f6f6;
           border: 1px solid #387cff;
@@ -705,8 +747,14 @@ hi {
       .t-c-w {
         grid-column: 1 / span 2;
         button {
+          background-color: #387cff;
           font-size: 1em;
+          width: min(100%, 300px);
         }
+      }
+      .u-c-info{
+        font-size: 0.9em;
+        font-weight: 500;
       }
     }
   }
@@ -803,7 +851,6 @@ hi {
 
   .header-nav {
     padding: 15px !important;
-    padding-top: 30px !important;
   }
 
   .latest-wrapper {

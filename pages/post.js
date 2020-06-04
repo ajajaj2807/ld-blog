@@ -7,6 +7,7 @@ import firebase from "firebase/app";
 import Loading from "../comps/Loading";
 import Comments from "../comps/Comments";
 import { NextSeo } from "next-seo";
+import Like from "../comps/Like";
 const ReactMarkdown = require("react-markdown/with-html");
 
 const Post = () => {
@@ -26,14 +27,21 @@ const Post = () => {
           views: firebase.firestore.FieldValue.increment(1),
         });
       }
-    }
+    };
 
     fetchData();
   }, [router.query]);
 
   return (
     <div className="spp-wrap">
-      {!post ? <div className="white-skeleton"> <Loading /> </div> : ''}
+      {!post ? (
+        <div className="white-skeleton">
+          {" "}
+          <Loading />{" "}
+        </div>
+      ) : (
+        ""
+      )}
       <NextSeo
         title={post ? post.title : "Article by Ajay Yadav - Personal Blog"}
         description={post ? post.description : ""}
@@ -73,6 +81,11 @@ const Post = () => {
               ""
             )}
           </div>
+          <Like
+            id={id}
+            likes={post ? post.likes : ""}
+            likedBy={post ? post.likedBy : []}
+          />
           <Comments id={id} comments={""} />
         </div>
 

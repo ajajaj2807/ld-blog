@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { firestore } from "../firebase";
 import { collectIdsAndDocs } from "../utils";
 import Router from "next/router";
+import { UserContext } from "../UserContext";
 
 const Comments = ({ id }) => {
   const [name, setName] = useState("");
   const [email, setMail] = useState("");
   const [comment, setComment] = useState("");
   const [cdata, setCdata] = useState("");
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,10 +27,10 @@ const Comments = ({ id }) => {
     const createdAt = Date.parse(Date());
 
     const commentData = {
-      name,
+      name: user.displayName,
       comment,
       time: createdAt,
-      email
+      email: user.email,
     };
 
     await firestore.collection(`posts/${id}/comments`).add(commentData);
@@ -39,28 +41,29 @@ const Comments = ({ id }) => {
     <div className="comments-wrapper">
       <h2>Comments</h2>
       <div className="add-c-wrapper">
-        <form onSubmit={addComment}>
-          <input
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-            placeholder="Name"
-          ></input>
-          <input
-            onChange={(e) => setMail(e.target.value)}
-            value={email}
-            required={true}
-            type="email"
-            placeholder="Email"
-          ></input>
-          <div className="t-c-w">
-            <textarea
-              onChange={(e) => setComment(e.target.value)}
-              value={comment}
-              placeholder="Comment Here"
-            ></textarea>
-            <button type="submit">Add Comment</button>
-          </div>
-        </form>
+        {user ? (
+          <form onSubmit={addComment}>
+            <span className="u-c-info">
+              <b>{user.displayName} </b> <br />
+              {user.email}
+            </span>
+            <div className="t-c-w">
+              <textarea
+                onChange={(e) => setComment(e.target.value)}
+                value={comment}
+                placeholder="Comment Here"
+              ></textarea>
+              <button type="submit">Add Comment</button>
+            </div>
+          </form>
+        ) : (
+          <>
+            {" "}
+            <div className="c-no-user-wrapper">
+              You need to be Signed In to add a comment.
+            </div>{" "}
+          </>
+        )}
       </div>
 
       <div className="clist-wrapper">

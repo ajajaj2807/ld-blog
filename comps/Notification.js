@@ -1,34 +1,19 @@
 import { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
 
-const Notification = () => {
+const Notification = ({type, children}) => {
   const [isOpen, setOpen] = useState(false);
   const notiRef = useRef(null);
 
-  const slideDown = (e) => {
-    gsap.from(e.current, 1, {
-      y: -500,
-      ease: "power4.out",
-      delay: 2,
-    });
-  };
 
   const handleClose = () => {
-    gsap.to(notiRef.current, 1, {
-      y: -500,
-      ease: "power4.out",
-    });
     localStorage.setItem("notified", true);
     setOpen(false);
   };
 
   useEffect(() => {
-    if (localStorage.getItem("notified") == null) setOpen(true);
-    console.log(localStorage.getItem("notified"));
-  }, []);
-
-  useEffect(() => {
-    slideDown(notiRef);
+    if (localStorage.getItem("notified") == null) {
+      setOpen(true);
+    }
   }, []);
 
   return (
@@ -36,10 +21,9 @@ const Notification = () => {
       {isOpen ? (
         <div ref={notiRef} className="notification-wrapper">
           <div className="noti-body">
-            <span className="noti-type">info</span>
+            <span className="noti-type"> {type} </span>
             <span className="noti-content">
-              Newsletter facility available now. Click on the Subscribe button
-              to Subscribe.
+              {children}
             </span>
           </div>
           <div onClick={handleClose} className="noti-close">
