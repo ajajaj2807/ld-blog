@@ -36,6 +36,7 @@ const Create = () => {
       createdAt,
       description: des,
       imgUrl: imageAsUrl.imgUrl,
+      likedBy: [],
     };
 
     const docRef = await firestore.collection("posts").add(post);
