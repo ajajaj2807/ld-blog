@@ -47,7 +47,7 @@ export default function Like({ id, likes, likedBy }) {
 
   return (
     <div className="like-wrapper">
-      {llikes} {llikes == 1 ? "Like" : "Likes"}
+      {/* {llikes} {llikes == 1 ? "Like" : "Likes"} */}
       <button onClick={isLiked ? dislikePost : likePost}>
         {" "}
         {isLiked ? "Liked" : "Like 👍"}{" "}

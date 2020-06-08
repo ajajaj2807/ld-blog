@@ -24,41 +24,41 @@ body {
 }
 
 //Like styles
-.like-wrapper{
+.like-wrapper {
   padding: 1em;
   margin-top: 2em;
-  border: 2px solid #387cff;
+  background-color: #e6e6e6;
   display: flex;
+  border-radius: 8px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  button{
+  button {
     font-size: 1.1em;
-    background-color: #e9e9e9;
+    background-color: #fff;
     color: #212121;
   }
 }
 
-.ip-wrapper{
+.ip-wrapper {
   background-color: #ccc;
   padding: 15px;
   border-radius: 8px;
 }
 
-.image-preview-box{
+.image-preview-box {
   padding: 10px;
   border-radius: 8px;
   display: flex;
 }
-.image-thumb{
+.image-thumb {
   max-height: 70px;
   margin: 8px;
   cursor: copy;
-  &:hover{
+  &:hover {
     opacity: 0.8;
   }
 }
-
 
 //Header Styles
 .header-wrapper {
@@ -68,7 +68,7 @@ body {
   align-items: center;
   background-color: #fff;
   .header-nav {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
@@ -80,21 +80,20 @@ body {
       color: #212121;
     }
   }
-  .user-sign-wrapper{
+  .user-sign-wrapper {
     padding: 0 1em;
-    .user-info-box{
+    .user-info-box {
       display: flex;
       flex-direction: column;
       align-items: right;
       align-content: right;
       font-size: 0.8em;
-      button{
+      button {
         padding: 0;
         background: #fff;
         color: tomato;
         font-weight: bold;
         text-align: right;
-
       }
     }
   }
@@ -102,7 +101,7 @@ body {
 
 //Latest Post Styles
 .latest-wrapper {
-  cursor: default;
+  cursor: pointer !important;
   font-family: $f-sec;
   margin-top: 1em;
   width: 100%;
@@ -135,6 +134,7 @@ body {
     max-width: 80%;
     padding: 1em 0;
     .lp-title {
+      cursor: pointer;
       display: block;
       font-size: 2.2em;
       font-weight: 600;
@@ -144,6 +144,7 @@ body {
     }
   }
   .lp-img {
+    cursor: pointer;
     overflow-y: hidden;
     height: 45vh;
     position: absolute;
@@ -164,13 +165,18 @@ body {
   align-items: center;
   .sub-content {
     color: #fff;
+    display: flex;
+    flex-direction: column;
     .sc-title {
+      padding: 0;
+      margin: 0;
       font-family: $f-pri;
-      font-size: 1.8em;
+      font-size: 2em;
     }
     .sc-info {
       font-family: $f-sec;
       font-size: 1em;
+      display: block;
     }
   }
   .b-bg-w {
@@ -201,7 +207,7 @@ button {
 
 //AllPosts wrapper
 .allposts-wrapper {
-  margin-top: 3em;
+  margin-top: 2em;
   width: 100%;
   height: auto;
   display: flex;
@@ -209,20 +215,23 @@ button {
   justify-content: center;
   align-items: center;
   h3 {
-    font-size: 1.6em;
+    font-size: 1.4em;
+    font-weight: 800;
   }
   .ap-cont {
     width: 100%;
     .sp-cont {
       margin-top: 1em;
-      border-radius: 14px;
-      padding: 2em 4em;
+      border-radius: 8px;
+      padding: 2em 3em;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-weight: 500;
-      background: #387cff;
+      background: #191919;
+      border: 3px solid #387cff;
       font-family: $f-sec;
+      color: #fff;
       width: 100%;
       .sp-title {
         font-size: 1.6em;
@@ -437,12 +446,12 @@ button {
 .sp-wrapper {
   margin: 1em 0;
   .pp-head {
-    padding: 40vh 20px 20px 20px;
+    padding: 40vh 30px 30px 30px;
     background: #eee;
     .pp-title {
-      font-size: 2.4em;
+      font-size: 2.6em;
       font-family: $f-pri;
-      font-weight: 700;
+      font-weight: 800;
       display: block;
     }
     .pp-info {
@@ -486,7 +495,9 @@ button {
 }
 
 .ap-rm {
-  font-size: 1em;
+  font-size: 1.2em;
+  background-color: #fff;
+  color:#111;
 }
 
 //Markdown Styles
@@ -722,7 +733,7 @@ hi {
   text-align: center;
   margin-top: 1em;
 }
-.c-no-user-wrapper{
+.c-no-user-wrapper {
   font-size: 1em;
   color: red;
   text-align: center;
@@ -772,7 +783,7 @@ hi {
           width: min(100%, 300px);
         }
       }
-      .u-c-info{
+      .u-c-info {
         font-size: 0.9em;
         font-weight: 500;
       }

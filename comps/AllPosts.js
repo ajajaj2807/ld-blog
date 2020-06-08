@@ -6,7 +6,7 @@ const AllPosts = ({ posts }) => {
       <h3>All Posts</h3>
 
       <div className="ap-cont">
-        {posts.map((post) => {
+        {posts.reverse().map((post) => {
           return (
             <div key={post.id} className="sp-cont">
               <div className="sp-content">

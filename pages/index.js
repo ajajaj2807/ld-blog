@@ -28,8 +28,9 @@ const Index = () => {
       const snapshot = await firestore.collection("posts").get();
 
       const posts = snapshot.docs.map(collectIdsAndDocs);
+      const sortedPosts = posts.sort((a,b) => a.createdAt - b.createdAt)
 
-      setPosts(posts);
+      setPosts(sortedPosts);
     };
 
     fetchData();
