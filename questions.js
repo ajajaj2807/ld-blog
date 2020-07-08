@@ -28,5 +28,53 @@ export const questions = [
     category: "hard",
     io: 'Sample input: [7, 6, 4, -1, 1, 2], 16 ; Sample output: [[7, 6, 4, -1], [7, 6, 1, 2]]'
   },
+  {
+    title: "Binary Search",
+    question: "Write a function that takes in a sorted array of integers as well as a target integer. The function should use the Binary Search algorithm to nd if the target number is contained in the array and should return its index if it is, otherwise -1.",
+    category: "easy",
+    io: 'Sample input: [0, 1, 21, 33, 45, 45, 61, 71, 72, 73], 33 ; Sample output: 3'
+  },
+  {
+    title: "Find Three Largest Numbers",
+    question: "Write a function that takes in an array of integers and returns a sorted array of the three largest integers in the input array. Note that the function should return duplicate integers if necessary; for example, it should return [10, 10, 12] for an input array of [10, 5, 9, 10, 12].",
+    category: "easy",
+    io: 'Sample input: [141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7] Sample output: [18, 141, 541]'
+  },
+  {
+    title: "Bubble Sort",
+    question: "Write a function that takes in an array of integers and returns a sorted version of that array. Use the Bubble Sort algorithm to sort the array.",
+    category: "easy",
+    io: ' Sample input: [8, 5, 2, 9, 5, 6, 3] Sample output: [2, 3, 5, 5, 6, 8, 9] '
+  },
+  {
+    title: "Insertion Sort",
+    question: "Write a function that takes in an array of integers and returns a sorted version of that array. Use the Insertion Sort algorithm to sort the array.",
+    category: "easy",
+    io: 'Sample input: [8, 5, 2, 9, 5, 6, 3] Sample output: [2, 3, 5, 5, 6, 8, 9]'
+  },
+  {
+    title: "Selection Sort",
+    question: "Write a function that takes in an array of integers and returns a sorted version of that array. Use the Selection Sort algorithm to sort the array.",
+    category: "easy",
+    io: 'Sample input: [8, 5, 2, 9, 5, 6, 3] Sample output: [2, 3, 5, 5, 6, 8, 9]'
+  },
+  {
+    title: "Palindrome Check",
+    question: "Write a function that takes in a non-empty string and that returns a boolean representing whether or not the string is a palindrome. A palindrome is dened as a string that is written the same forward and backward.",
+    category: "easy",
+    io: 'Sample input:"abcdcba" ; Sample output: True (it is a palindrome)'
+  },
+  {
+    title: "Smallest Difference",
+    question: "Write a function that takes in two non-empty arrays of integers. The function should find the pair of numbers (one from the first array, one from the second array) whose absolute difference is closest to zero. The function should return an array containing these two numbers, with the number from the first array in the first position. Assume that there will only be one pair of numbers with the smallest difference.",
+    category: "medium",
+    io: 'Sample input: [-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17] Sample output: [28, 26]'
+  },
+  {
+    title: "Max Subset Sum",
+    question: "Write a function that takes in an array of positive integers and returns an integer representing the maximum sum of non-adjacent elements in the array. If a sum cannot be generated, the function should return 0.",
+    category: "medium",
+    io: 'Sample input: [75, 105, 120, 75, 90, 135] ; Sample output: 330 (75, 120, 135)'
+  },
 ];
 
