@@ -22,7 +22,7 @@ const Header = () => {
       <div className="header-wrapper">
         <div className="header-nav">
           <Link href={`/`}>
-            <span className="logo">ajay.rocks</span>
+            <span className="logo">blog.ajajaj.me</span>
           </Link>
         </div>
         <div className="user-sign-wrapper">
